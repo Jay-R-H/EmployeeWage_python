@@ -14,6 +14,7 @@ from random import randint
 
 wage_per_hour = 20
 full_day_workingHrs = 8
+wage = 0
 
 employee_status = randint(0,1)
 
