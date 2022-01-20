@@ -17,8 +17,10 @@ full_day_workingHrs = 8
 max_working_days = 20
 worked_days = 0
 total_wage = 0
+max_working_hrs = 100
+worked_hrs = 0
 
-while worked_days <= max_working_days: 
+while (worked_days < max_working_days) and (worked_hrs < max_working_hrs): 
     
     employee_status = randint(0,2)
 
@@ -29,17 +31,30 @@ while worked_days <= max_working_days:
         }
         return workingHrs.get(Status,0)
 
+    emp_Hrs = employeeCheckFunc(employee_status)
 
-    if employeeCheckFunc(employee_status) == 0:
+    if emp_Hrs == 0:
         print("Employee is absent")
-    elif employeeCheckFunc(employee_status) == 1:
+    elif emp_Hrs == 1:
         print("Employee is present and works full time")
         worked_days+=1
+        if worked_hrs + emp_Hrs > 100:
+            break
+        else:
+            worked_hrs += emp_Hrs
+
     else:
         print("Employee is present and works part time")
         worked_days+=1
+        if worked_hrs + emp_Hrs > 100:
+            break
+        else:
+            worked_hrs += emp_Hrs
 
+  
     wage = employeeCheckFunc(employee_status) * wage_per_hour
     total_wage += wage
+  
 
 print("Total Wage earned =",total_wage)
+print("Total hrs worked" , worked_hrs,"Total days worked",worked_days)
