@@ -53,6 +53,7 @@ while (worked_days < max_working_days) and (worked_hrs < max_working_hrs):
   
     wage = getWorkingHrs(employee_status) * wage_per_hour
     total_wage += wage
+    print("Daily wage",wage,"Total wage",total_wage)
   
 
 print("Total Wage earned =",total_wage)
