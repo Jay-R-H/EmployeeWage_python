@@ -20,6 +20,8 @@ total_wage = 0
 max_working_hrs = 100
 worked_hrs = 0
 
+wageStorage = []
+
 def getWorkingHrs(status):
     workingHrs = {
         1 : 8,
@@ -52,9 +54,12 @@ while (worked_days < max_working_days) and (worked_hrs < max_working_hrs):
                 worked_hrs += emp_Hrs
 
     wage = getWorkingHrs(employee_status) * wage_per_hour
+    wageStorage.append(wage)
     total_wage += wage
     print("Daily wage",wage,"Total wage",total_wage)
   
 
 print("Total Wage earned =",total_wage)
+wageStorage.append(total_wage)
 print("Total hrs worked" , worked_hrs,"Total days worked",worked_days)
+print(wageStorage)
