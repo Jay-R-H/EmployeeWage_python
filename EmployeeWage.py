@@ -35,22 +35,22 @@ while (worked_days < max_working_days) and (worked_hrs < max_working_hrs):
 
     if emp_Hrs == 0:
         print("Employee is absent")
-    elif emp_Hrs == 1:
-        print("Employee is present and works full time")
-        worked_days+=1
-        if worked_hrs + emp_Hrs > 100:
-            break
-        else:
-            worked_hrs += emp_Hrs
     else:
-        print("Employee is present and works part time")
-        worked_days+=1
-        if worked_hrs + emp_Hrs > 100:
-            break
+        if emp_Hrs == 1:
+            print("Employee is present and works full time")
+            worked_days+=1
+            if worked_hrs + emp_Hrs > 100:
+                break
+            else:
+                worked_hrs += emp_Hrs
         else:
-            worked_hrs += emp_Hrs
+            print("Employee is present and works part time")
+            worked_days+=1
+            if worked_hrs + emp_Hrs > 100:
+                break
+            else:
+                worked_hrs += emp_Hrs
 
-  
     wage = getWorkingHrs(employee_status) * wage_per_hour
     total_wage += wage
     print("Daily wage",wage,"Total wage",total_wage)
