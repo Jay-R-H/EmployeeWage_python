@@ -21,6 +21,8 @@ max_working_hrs = 100
 worked_hrs = 0
 
 wageStorage = []
+dayWageDict = {}
+dayAndWageStorage = [dayWageDict]
 
 def getWorkingHrs(status):
     workingHrs = {
@@ -55,6 +57,8 @@ while (worked_days < max_working_days) and (worked_hrs < max_working_hrs):
 
     wage = getWorkingHrs(employee_status) * wage_per_hour
     wageStorage.append(wage)
+    dayWageDict = {worked_days:wage}
+    dayAndWageStorage.append(dayWageDict)
     total_wage += wage
     print("Daily wage",wage,"Total wage",total_wage)
   
@@ -62,4 +66,6 @@ while (worked_days < max_working_days) and (worked_hrs < max_working_hrs):
 print("Total Wage earned =",total_wage)
 wageStorage.append(total_wage)
 print("Total hrs worked" , worked_hrs,"Total days worked",worked_days)
-print(wageStorage)
+dayWageDict = {'Total':total_wage}
+dayAndWageStorage.append(dayWageDict)
+print(dayAndWageStorage)
