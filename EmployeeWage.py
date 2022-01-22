@@ -1,12 +1,8 @@
 '''
 @Author: Jayanand
-
 @Date: 19-01-2022
-
 @Last Modified by: Jayanand
-
 @Last Modified time: 19-01-2022
-
 @Title : Employee daily wage computation.
 '''
 
