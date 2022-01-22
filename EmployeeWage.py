@@ -18,6 +18,10 @@ worked_hrs = 0
 
 wageStorage = []
 
+dayWageDict = {}
+dayAndWageStorage = []
+
+
 def getWorkingHrs(status):
     workingHrs = {
         1 : 8,
